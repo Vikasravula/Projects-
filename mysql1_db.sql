@@ -136,7 +136,12 @@ FROM orders
 GROUP BY custID
 ORDER BY number_of_orders DESC
 LIMIT 1;
-
+-- question 5 duplicate answer 
+SELECT custID,sellID, COUNT(*) AS number_of_orders
+FROM orders
+GROUP BY custID ,sellID
+ORDER BY number_of_orders DESC
+LIMIT 1;
 -- question 6
 SELECT
     DATE_FORMAT(transaction_date, '%M') AS month,
